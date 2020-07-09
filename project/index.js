@@ -52,7 +52,7 @@ mongoClient.connect(function (err, client) {
       if (usersArr.length) {
         res.status(200).json({ user: usersArr });
       } else {
-        res.err(err);
+        res.status(200).json({ user: null });
       }
     });
   });
@@ -62,7 +62,7 @@ mongoClient.connect(function (err, client) {
       if (user.length) {
         res.status(200).json({ user: user });
       } else {
-        res.err(err);
+        res.status(200).json({ user: null });
       }
     });
   });
@@ -82,7 +82,7 @@ mongoClient.connect(function (err, client) {
       if (user.length) {
         res.status(200).json({ name: name, averageMark: average });
       } else {
-        res.err(err);
+        res.status(200).json({ name: null, averageMark: null });
       }
     });
   });
